@@ -114,3 +114,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+abortion_pretrain/
+bert_base_cased/
+bert_base_chinese/
+regression/
+tmp/
+trained_models/

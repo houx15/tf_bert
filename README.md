@@ -1,3 +1,27 @@
+# Tutorials for Prediction on Opinion Topics
+
+There're several things to prepare before prediction:
+- Data to predict: data file should be in csv format, with a column named `text` containing texts for prediction
+- Trained model: there should be `model.ckpt-xxx.index` `model.ckpt-xxx.meta` `model.ckpt-xxx.data-00000-of-00000` files in the model directory, usually model with the largest number is the best model.
+
+```shell
+export DATA_DIR = /path/to/data/to/predict
+export MODEL_DIR = /path/to/trained/model
+
+python run_classifier.py \
+  --task_name=opinion \
+  --do_train=false \
+  --do_eval=false \
+  --do_prediction=true \
+  --source_type=tweet(or weibo, optional, tweet by default) \
+  --data_dir=$DATA_DIR/file_name.csv \
+  --init_checkpoint=$MODEL_DIR/model.ckpt-626 \
+  --output_dir=predict_output/
+```
+
+You will get two files named `predict.tf_record` and `test_results.tsv` in the output_dir. There're 2 columns in `test_results.tsv`, the first one is predict results and the second column is probabilities.
+
+
 # BERT
 
 **\*\*\*\*\* New March 11th, 2020: Smaller BERT Models \*\*\*\*\***
