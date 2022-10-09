@@ -19,6 +19,24 @@ python run_classifier.py \
   --output_dir=predict_output/
 ```
 
+If run on tiger.princeton.edu,
+
+```
+module load cudnn/cuda-10.0/7.5.0
+conda activate tf
+export DATA_DIR = /path/to/data/to/predict
+export MODEL_DIR = /path/to/trained/model
+python2 run_classifier.py \
+  --task_name=opinion \
+  --do_train=false \
+  --do_eval=false \
+  --do_predict=true \
+  --source_type=tweet \
+  --data_dir=$DATA_DIR \
+  --init_checkpoint=$MODEL_DIR/model.ckpt-203 \
+  --output_dir=$DATA_DIR
+```
+
 You will get two files named `predict.tf_record` and `test_results.tsv` in the output_dir. There're 2 columns in `test_results.tsv`, the first one is predict results and the second column is probabilities.
 
 
