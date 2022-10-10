@@ -24,8 +24,8 @@ If run on tiger.princeton.edu,
 ```
 module load cudnn/cuda-10.0/7.5.0
 conda activate tf
-export DATA_DIR = /path/to/data/to/predict
-export MODEL_DIR = /path/to/trained/model
+export DATA_DIR=/home/junmingh/virus/tmp
+export MODEL_DIR=/home/junmingh/virus/model-bert/2022-10-07-yuxin-tf-abortion-binary
 python2 run_classifier.py \
   --task_name=opinion \
   --do_train=false \
