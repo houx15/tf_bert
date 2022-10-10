@@ -1,4 +1,5 @@
-def sentence_cleaner(src_type, sentence:str):
+# -*- coding: UTF-8 -*-
+def sentence_cleaner(src_type, sentence):
     import re
     if src_type == "tweet":
         sentence = sentence.replace("\"", "")
